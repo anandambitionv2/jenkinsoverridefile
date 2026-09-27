@@ -1,7 +1,7 @@
 namespaceOverride: jenkins
 
 controller:
-  serviceType: ClusterIP
+  serviceType: LoadBalancer
 
 persistence:
   enabled: false
