@@ -1,0 +1,7 @@
+namespaceOverride: jenkins
+
+controller:
+  serviceType: ClusterIP
+
+persistence:
+  enabled: false
