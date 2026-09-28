@@ -5,3 +5,10 @@ controller:
 
 persistence:
   enabled: false
+
+agent:
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "256Mi"
+    
