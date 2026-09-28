@@ -2,7 +2,7 @@ namespaceOverride: jenkins
 
 controller:
   serviceType: LoadBalancer
-  numExecutors: 2
+
   installPlugins:
     - kubernetes:4557.ve746270f672f
     - workflow-aggregator:608.v67378e9d3db_1
@@ -14,7 +14,7 @@ persistence:
   enabled: false
 
 agent:
-  enabled: false
+  enabled: true
   resources:
     requests:
       cpu: "100m"
