@@ -2,6 +2,30 @@ namespaceOverride: jenkins
 
 controller:
   serviceType: LoadBalancer
+  controller:
+  JCasC:
+    configScripts:
+      create-pipeline-job:
+        jobs:
+          - script: >
+              pipelineJob('jenkinspipelineascode') {
+                description('Pipeline for jenkinspipeline repository')
+
+                definition {
+                  cpsScm {
+                    scm {
+                      git {
+                        remote {
+                          url('https://github.com/anandambitionv2/jenkinspipeline.git')
+                        }
+                        branch('*/main')
+                      }
+                    }
+                    scriptPath('JenkinsFile')
+                    lightweight()
+                  }
+                }
+              }
 
   installPlugins:
     - kubernetes:4557.ve746270f672f
