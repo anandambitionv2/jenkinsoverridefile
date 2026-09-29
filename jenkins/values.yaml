@@ -2,13 +2,12 @@ namespaceOverride: jenkins
 
 controller:
   serviceType: LoadBalancer
-  controller:
   JCasC:
     configScripts:
-      create-pipeline-job:
+      create-pipeline-job: |
         jobs:
           - script: >
-              pipelineJob('jenkinspipelineascode') {
+              pipelineJob('jenkinspipeline') {
                 description('Pipeline for jenkinspipeline repository')
 
                 definition {
@@ -21,7 +20,7 @@ controller:
                         branch('*/main')
                       }
                     }
-                    scriptPath('JenkinsFile')
+                    scriptPath('Jenkinsfile')
                     lightweight()
                   }
                 }
