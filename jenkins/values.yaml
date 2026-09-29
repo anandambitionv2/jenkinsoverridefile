@@ -9,6 +9,7 @@ controller:
     - git:5.10.1
     - configuration-as-code:2121.v86fe99d4b_b_a_b_
     - terraform:1.0.10
+    - job-dsl:3732.v9a_c49a_61a_313
 
 persistence:
   enabled: false
