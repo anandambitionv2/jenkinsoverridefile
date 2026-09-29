@@ -36,7 +36,7 @@ controller:
     - pipeline-stage-view:2.41
 
 persistence:
-  enabled: true
+  enabled: false
 
 agent:
   enabled: true
