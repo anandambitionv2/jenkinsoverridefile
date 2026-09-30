@@ -7,8 +7,8 @@ controller:
       create-pipeline-job: |
         jobs:
           - script: >
-              def customer = 'Customer-A'
-              pipelineJob("${customer}/jenkinspipeline") {
+              
+              pipelineJob(customer-A/jenkinspipeline) {
                 description('Pipeline for jenkinspipeline repository')
 
                 definition {
