@@ -6,7 +6,7 @@ controller:
     configScripts:
       create-pipeline-job: |
         jobs:
-          - script: >
+          - script: |
               folder('customer-A') {
                 description("Pipelines for customer")
               }
