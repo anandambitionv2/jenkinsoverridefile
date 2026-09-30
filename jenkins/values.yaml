@@ -8,7 +8,7 @@ controller:
         jobs:
           - script: >
               
-              pipelineJob(customer-A/jenkinspipeline) {
+              pipelineJob('customer-A/jenkinspipeline') {
                 description('Pipeline for jenkinspipeline repository')
 
                 definition {
