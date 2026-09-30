@@ -7,7 +7,9 @@ controller:
       create-pipeline-job: |
         jobs:
           - script: >
-              
+              folder('customer-A') {
+                description("Pipelines for ${customer}")
+              }
               pipelineJob('customer-A/jenkinspipeline') {
                 description('Pipeline for jenkinspipeline repository')
 
