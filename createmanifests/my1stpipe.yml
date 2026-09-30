@@ -1,0 +1,30 @@
+apiVersion: jenkins.io/v1alpha2
+kind: JenkinsJob
+metadata:
+  name: customer-b-pipeline
+  namespace: jenkins
+spec:
+  # This matches the name of your Helm-installed Jenkins instance
+  jenkinsInstanceRef: jenkinsapphelmbased 
+  action: Preserved
+  definition: |
+    folder('customer-B') {
+      description("Pipelines for customer")
+    }
+    pipelineJob('customer-B/fraudpipeline') {
+      description('Pipeline for jenkinspipeline repository')
+      definition {
+        cpsScm {
+          scm {
+            git {
+              remote {
+                url('https://github.com/anandambitionv2/jenkinspipeline.git')
+              }
+              branch('*/main')
+            }
+          }
+          scriptPath('JenkinsFile')
+          lightweight()
+        }
+      }
+    }
