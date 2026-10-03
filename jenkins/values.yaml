@@ -53,7 +53,29 @@ controller:
                 }
               }
 
+          - script: |
+                folder('seedjob-parameterized') {
+                  description("Pipelines for customer")
+                }
+                pipelineJob('seedjob-parameterized/seed-job') {
+                  description('Pipeline for jenkinspipeline repository')
 
+                  definition {
+                    cpsScm {
+                      scm {
+                        git {
+                          remote {
+                            url('https://github.com/anandambitionv2/jenkinsseedjob.git')
+
+                          }
+                          branch('*/main')
+                        }
+                      }
+                      scriptPath('jenkins.groovy')
+                      lightweight()
+                    }
+                  }
+                }
   installPlugins:
     - kubernetes:4557.ve746270f672f
     - workflow-aggregator:608.v67378e9d3db_1
